@@ -1,0 +1,19 @@
+name: publish
+
+on:
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Make all
+        run: ./package.sh
+      - name: Upload release binaries
+        uses: alexellis/upload-assets@0.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '["./release/packages/frp*"]'
