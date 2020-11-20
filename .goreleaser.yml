@@ -1,3 +1,5 @@
+builds:
+  - skip: true
 checksum:
   name_template: 'checksums.txt'
 release:
@@ -5,7 +7,7 @@ release:
   # Note: it can only be one: either github, gitlab or gitea
   github:
     owner: fatedier
-    name: frp
+    name: release-test
 
   draft: false
 
