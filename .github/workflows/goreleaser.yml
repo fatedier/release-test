@@ -21,6 +21,7 @@ jobs:
         run: |
           go version
           go env
+          ls -l $GOPATH/bin
           cat $GOROOT/src/runtime/internal/sys/zversion.go
           cat $GOROOT/VERSION
           ls -l /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
