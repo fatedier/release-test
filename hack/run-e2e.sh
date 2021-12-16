@@ -9,6 +9,7 @@ if [ $? -ne 0 ]; then
     echo "ginkgo not found, try to install..."
     go install github.com/onsi/ginkgo/ginkgo@latest
 fi
+which ginkgo
 
 debug=false
 if [ x${DEBUG} == x"true" ]; then
@@ -19,4 +20,4 @@ if [ x${LOG_LEVEL} != x"" ]; then
     logLevel=${LOG_LEVEL}
 fi
 
-ginkgo -nodes=8 -slowSpecThreshold=20 ${ROOT}/test/e2e -- -frpc-path=${ROOT}/bin/frpc -frps-path=${ROOT}/bin/frps -log-level=${logLevel} -debug=${debug}
+# ginkgo -nodes=8 -slowSpecThreshold=20 ${ROOT}/test/e2e -- -frpc-path=${ROOT}/bin/frpc -frps-path=${ROOT}/bin/frps -log-level=${logLevel} -debug=${debug}
