@@ -28,6 +28,7 @@ jobs:
           ls -l /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
           md5sum /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
           ./package.sh
+          echo $PATH
           make e2e
 
       - name: Run GoReleaser
