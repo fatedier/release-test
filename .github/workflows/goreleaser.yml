@@ -23,12 +23,12 @@ jobs:
           go env
           ls -l $GOPATH/bin
           which go
-          cp -f `which go` /usr/bin/go
           cat $GOROOT/src/runtime/internal/sys/zversion.go
           cat $GOROOT/VERSION
           ls -l /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
           md5sum /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
           ./package.sh
+          make e2e
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
