@@ -3,9 +3,6 @@ name: goreleaser
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
