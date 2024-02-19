@@ -23,6 +23,7 @@ jobs:
           go env
           ls -l $GOPATH/bin
           which go
+          echo $PATH
           ./package.sh
 
       - name: Run GoReleaser
